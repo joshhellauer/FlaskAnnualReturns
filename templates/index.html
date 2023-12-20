@@ -1,0 +1,19 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Annual Returns</title>
+  </head>
+  <body>
+    Click an index to see more details
+    <a href="{{url_for('market_information', market_name='S&P500')}}"
+      >S&p 500</a
+    >
+    <a href="{{ url_for('market_information', market_name='NASDAQ') }}"
+      >NASDAQ</a
+    >
+    <a href="{{url_for('market_information', market_name='DowJones')}}"
+      >Dow Jones</a
+    >
+  </body>
+</html>

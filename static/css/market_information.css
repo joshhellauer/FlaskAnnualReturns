@@ -1,0 +1,40 @@
+body {
+  /* display: flex; */
+  max-width: 98vw;
+}
+
+#main-content-wrapper {
+  display: flex;
+  max-width: 600px;
+}
+
+#title-h1 {
+  display: block;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+thead {
+  text-decoration: bold;
+}
+
+tr {
+  border: 2px solid black;
+  border-left: none;
+  border-right: none;
+}
+
+.year-td {
+  text-align: left;
+}
+
+.data-td {
+  text-align: right;
+}
+
+.js-plotly-plot {
+  max-width: 500px;
+  height: 380px;
+}

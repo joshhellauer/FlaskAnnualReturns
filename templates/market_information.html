@@ -1,0 +1,55 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ market_data[0].index_name }}</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='/css/market_information.css') }}"
+    />
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="{{ url_for('static', filename='/js/display_graphs.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
+  </head>
+
+  <body>
+    <a href="{{ url_for('index') }}"><h4>Click here to go back</h4></a>
+    <h1 id="title-h1">
+      Annual Returns for
+      <span id="market-name-span">{{ market_data[0].index_name }}</span>
+    </h1>
+    <div id="main-content-wrapper">
+      <table id="market-data-table">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Return Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for data in market_data %}
+          <tr>
+            <td class="year-td">{{ data.year }}</td>
+            <td class="data-td">{{ data.return_value }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <div id="graph-container">
+        <form id="period-select-form" action="" method="">
+          <label for="period-length-input" id="period-length-label"
+            >Input desired period length (input of 10 means data will display
+            returns for a 10 year period, assuming investment was made on the
+            first day of the listed year)
+            <input type="number" min="1" id="period-length-input" />
+            <input id="submit-input" type="submit" text-content="Period" />
+          </label>
+        </form>
+        <div id="plotly-graph"></div>
+      </div>
+      <button onclick="downloadAll()">
+        Download data for all shown periods
+      </button>
+    </div>
+  </body>
+</html>
