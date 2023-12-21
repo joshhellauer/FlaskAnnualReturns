@@ -14,7 +14,6 @@ This is a simple, ugly looking flask app that allows you to look at historical r
 # Usage
   --Run the main app using ```python main_app.py```
   --Navigate to the URL specified in the command output, eg ```http://127.0.0.1:5000```
-
   --To start, select one of the three indices.
   --This will take you to a page containing a table of that index's historical returns, and a graph displaying the same info.
   --Input as many different time periods as you would like. The default graph is a period of 1 year. So an input of 2 will produce a graph that shows what the 2 year return would have been if you invested on the first of each year. 
